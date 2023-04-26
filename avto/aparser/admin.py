@@ -20,8 +20,7 @@ class AvtoImportAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('title', 'link_car', 'date',)
 
-    # метод, который расширит urlpatterns добавив путь
-    # на страницу с формой и привязывает url к методу
+ 
     def get_urls(self):
         urls = super().get_urls()
         urls.insert(-1, path('csv-upload/', self.upload_csv))
